@@ -2,17 +2,12 @@ language: go
 
 go:
   - master
-services:
-  - docker
-  - git
 
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.55.2/hugo_0.55.2_Linux-64bit.deb
   - sudo dpkg -i hugo*.deb
 
 script:
-  - git clone https://github.com/withlin/gitea.git
-  - docker build -t gitea .
   - hugo
 
 deploy:
