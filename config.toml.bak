@@ -1,0 +1,160 @@
+# This is a simple configuration.
+# If you want to see the full configuration, please check `full-config.toml` .
+# And see https://gohugo.io/getting-started/configuration/ .
+
+baseURL = "https://withlin.github.io/blog"
+theme = "jane"
+googleAnalytics = "UA-130696996-1"
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 5
+rssLimit = 20
+hasCJKLanguage = true
+pygmentsCodeFences = true # Enable syntax highlighting with GitHub flavoured code fences
+pygmentsUseClasses = true # Use CSS classes to format highlighted code
+pygmentsCodefencesGuessSyntax = true
+pygmentsOptions = "linenos=table"
+pygmentsStyle = "manni"
+
+
+
+[sitemap]                 # essential       
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  uglyURLs = true  # 扩展hugo var 尚未公开的变量，方便在模板中使用
+  #备案号，配置后网页底部将显示链接到备案系统
+  # beian = ""
+  description= "WithLin's blog"
+  enableDiscuss = true
+  
+  debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+
+  since = "2018"            # Site creation time          # 站点建立时间
+  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  rssFullContent = true     # if false, Rss feed instead of the summary
+
+  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+  # logoTitle = ""        # default: the title value    # 默认值: 上面设置的title值
+  keywords = ["golang","java","programming","net"] 
+
+  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
+  archive-paginate = 25
+
+  # paginate style, default use numbered pagination links
+  # if true, use original "Previous" and "Next" links.
+  # paginateOriginalStyle = true 
+
+  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+  dateFormatToUse = "2006-01-02"
+
+  # show word count and read time ?                       # 是否显示字数统计与阅读时间
+  moreMeta = true
+
+  # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+  # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
+  toc = true                                                                            # 是否开启目录
+  autoCollapseToc = false   # Auto expand and collapse toc                              # 目录自动展开/折叠
+  fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用fancybox（图片可点击）
+  bootcdn = false           # In china. @Deprecated: use [params.publicCDN]             # 是否使用bootcdn(@Deprecated: 请使用[params.publicCDN])
+  mathjax = true           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+  contentCopyright = '<a target="_blank" rel="license noopener external nofollow" href="https://creativecommons.org/licenses/by/4.0/deed.zh" >署名 4.0 国际</a>'
+
+
+  # changyanAppid = "cyt7HM6Iq"        # Changyan app id             # 畅言
+  # changyanAppkey = "prod_90e85fc8b207249a2493340f99075c94"       # Changyan app key
+  tencent_analytics = ""    # Tencent Analytics
+  baidu_push = false        # baidu push                  # 百度
+  baidu_analytics = "a16b3275b071ec0efc507a05422a7156"      # Baidu Analytics
+  baidu_verification = ""   # Baidu Verification
+  google_verification = ""  # Google_Verification         # 谷歌
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
+  customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
+
+[params.social]                                         # 社交链接
+  a-email = "mailto:withlinnn@gmail.com"
+  b-github = "https://github.com/withlin"
+
+[params.commentCount.disqus]
+  enable = false
+
+
+
+# [languages]
+#   [languages.cn]
+#     contentDir = "content/cn"
+#     title = "WithLin"
+#     weight = 1
+#     languageCode = "zh-CN"
+#     languageName = "中文"
+#     [languages.cn.author]
+#       name = "WithLin"
+#     [[languages.cn.menu.main]]
+#       name = "文章"
+#       weight = 10
+#       identifier = "archives"
+#       url = "/post/"
+#     [[languages.cn.menu.main]]
+#       name = "随笔"
+#       weight = 20
+#       identifier = "moments"
+#       url = "/moments/"
+#     [[languages.cn.menu.main]]
+#       name = "关于"
+#       weight = 30
+#       identifier = "about"
+#       url = "/about"
+#     [[languages.cn.menu.main]]
+#       name = "项目"
+#       weight = 40
+#       identifier = "projects"
+#       url = "https://github.com/withlin"
+#     [languages.cn.params]
+#       dateformat = "2006年1月2日"
+#       author = "WithLin"
+#       contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+  # language support # en / zh-cn / other... translations present in i18n/
+# 使用中文
+defaultContentLanguage = "zh-cn"  # 默认使用的语言
+[Languages.zh-cn]
+  languageCode = "zh-cn"
+
+
+[[menu.main]]             # config your menu              # 配置目录
+  name = "WithLin"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "文章"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "关于"
+  weight = 40
+  identifier = "about"
+  url = "/about/"
+
+    
+  #### merely edit ####
+[params.publicCDN]
+  enable = true
+  jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
+  slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
+  gitmentJS = '<script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>'
+  gitmentCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
+  photoswipe = '<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.js" integrity="sha256-AC9ChpELidrhGHX23ZU53vmRdz3FhKaN9E28+BbcWBw=" crossorigin="anonymous"></script>'
+  photoswipeUI = '<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>'
+  photoswipeCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css" integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin="anonymous">'
+  photoswipeSKIN = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css" integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin="anonymous">'
